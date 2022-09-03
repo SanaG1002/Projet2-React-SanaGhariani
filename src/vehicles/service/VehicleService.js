@@ -1,10 +1,9 @@
 
-class SwapiService {
-	constructor() { }
+class VehiclesService {
 
-	url = "https://swapi.dev/api/";
+	url = "https://swapi.dev/api/vehicles/";
 
-	async getSwapi() {
+	async getVehicles() {
 		try {
 			const response = await fetch(this.url);
 			if (!response.ok) throw new Error(response.status);
@@ -17,10 +16,11 @@ class SwapiService {
 		}
 	}
 
-	async getSwapiWithReturnedUrl(url) {
+	async getVehicleWithReturnedUrl(url) {
 		try {
 			const response = await fetch(url);
 			if (!response.ok) throw new Error(response.statusText);
+			
 			return await response.json();
 		} catch (e) {
 			console.error(e);
@@ -30,4 +30,4 @@ class SwapiService {
 	}
 }
 
-export default SwapiService;
+export default VehiclesService;

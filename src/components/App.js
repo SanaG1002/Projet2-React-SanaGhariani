@@ -1,18 +1,18 @@
-import Card from "./Card";
-import Text from "./Text";
-import Title from "./Title";
-import Table from "./Table";
+import Container from "react-bootstrap/Container";
+import Films from '../films/components/Films';
+import Peoples from "../peoples/components/Peoples";
+import Starships from "../starships/components/Starships";
+import Vehicles from "../vehicles/components/Vehicles";
 
-
-
-
-function App() {
+function App () {
   return (
-    <div className="App">
-
-      
-    </div>
-  );
+    <Container>
+      <Films />
+      <Peoples />
+      <Starships />
+      <Vehicles />
+    </Container>
+  )
 }
 
-export default App;
+export default App

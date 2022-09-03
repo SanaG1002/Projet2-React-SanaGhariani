@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
+import BCard from "react-bootstrap/Card";
 
-const Card = () => {
-  return (
-    <div>Card</div>
-  )
-}
+const DEFAULT_WIDTH = "18rem";
 
-export default Card
+const Card = ({ width = DEFAULT_WIDTH, children }) => {
+  return <BCard style={{ width: width }}>{children}</BCard>;
+};
+
+export default Card;
