@@ -1,6 +1,9 @@
 
 class StarshipService {
 
+    constructor() { }
+
+
 	url = "https://swapi.dev/api/starships/";
 
 	async getStarships() {

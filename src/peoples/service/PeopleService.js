@@ -2,6 +2,8 @@
 
 class PeopleService {
 
+    constructor() { }
+
 	url = "https://swapi.dev/api/people/";
 
 	async getPeoples() {

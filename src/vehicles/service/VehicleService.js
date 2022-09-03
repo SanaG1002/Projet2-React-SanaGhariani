@@ -1,6 +1,9 @@
 
 class VehiclesService {
 
+	constructor() { }
+
+
 	url = "https://swapi.dev/api/vehicles/";
 
 	async getVehicles() {
