@@ -4,6 +4,9 @@ import BCard from "react-bootstrap/Card";
 import FilmService from "../service/FilmService";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Vehicles from "../../vehicles/components/Vehicles";
+import Starships from "../../starships/components/Starships";
+import Peoples from "../../peoples/components/Peoples";
 
 const filmService = new FilmService();
 
@@ -31,6 +34,13 @@ const FilmPage = () => {
       <BCard.Body>{data.director}</BCard.Body>
       <BCard.Body>{data.producer}</BCard.Body>
       <BCard.Body>{data.release_date}</BCard.Body>
+      <BCard.Body>{data.release_date}</BCard.Body>
+  
+      <Vehicles data={data} />
+
+      <Starships data={data} />
+
+      <Peoples data={data} />
     </Card>
   );
 }

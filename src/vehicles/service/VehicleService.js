@@ -3,7 +3,6 @@ class VehiclesService {
 
 	constructor() { }
 
-
 	url = "https://swapi.dev/api/vehicles/";
 
 	async getVehicles() {
@@ -30,6 +29,19 @@ class VehiclesService {
 
 			return {};
 		}
+	}
+
+	getVehicleIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getVehicleUrlFromId(id) {
+		return this.url + id + "/";
+	}
+
+	async getVehicleById(id) {
+		const url = this.getVehicleUrlFromId(id);
+		return await this.getVehicleWithReturnedUrl(url);
 	}
 }
 

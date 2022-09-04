@@ -31,6 +31,19 @@ class PeopleService {
 			return {};
 		}
 	}
+
+	getPeopleIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getPeopleUrlFromId(id) {
+		return this.url + id + "/";
+	}
+
+	async getPeopleById(id) {
+		const url = this.getPeopleUrlFromId(id);
+		return await this.getPeopleWithReturnedUrl(url);
+	}
 }
 
 export default PeopleService;

@@ -1,31 +1,17 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import StarshipService from "../service/StarshipService";
 import StarshipList from "./StarshipList";
+import useGetData from "../../useGetData";
 
 const starshipService = new StarshipService();
 
-const Starships = () => {
-  const [data, setData] = useState([]);
+const Starships = ({data}) => {
+  const starships = useGetData(
+    starshipService.getStarshipById.bind(starshipService),
+    data?.starships
+  );
 
-  const getStarships = async () => {
-    const starships = await starshipService.getStarships();
-
-    setData(
-      await Promise.all(
-        starships.map((starship) =>
-          starshipService.getStarshipWithReturnedUrl(starship.url)
-        )
-      )
-    );
-  };
-
-  useEffect(() => {
-    getStarships();
-  }, []);
-
-  return <StarshipList starships={data} />;
+  return <StarshipList starships={starships} />;
 };
 
 export default Starships;

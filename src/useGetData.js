@@ -10,6 +10,8 @@ const isNotEmpty = (obj) => {
 }
 
 const useGetData = (method, dataToGet = []) => {
+
+    //*
     const [data, setData] = useState([]);
     const getData = useCallback(async (id) => method(id), [method]);
     const getAllData = useCallback(async () => {
@@ -21,5 +23,17 @@ const useGetData = (method, dataToGet = []) => {
         getAllData();
     }, [dataToGet.length]);
     return data;
+    //*/
+
+    return [
+        {
+          "name": "Sand Crawler", 
+          "model": "Digger Crawler"
+        },
+        {
+          "name": "T-16 skyhopper", 
+          "model": "T-16 skyhopper"
+        }
+      ];
 };
 export default useGetData;

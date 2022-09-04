@@ -3,7 +3,6 @@ class StarshipService {
 
     constructor() { }
 
-
 	url = "https://swapi.dev/api/starships/";
 
 	async getStarships() {
@@ -30,6 +29,19 @@ class StarshipService {
 
 			return {};
 		}
+	}
+
+	getStarshipIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getStarshipUrlFromId(id) {
+		return this.url + id + "/";
+	}
+
+	async getStarshipById(id) {
+		const url = this.getStarshipUrlFromId(id);
+		return await this.getStarshipWithReturnedUrl(url);
 	}
 }
 

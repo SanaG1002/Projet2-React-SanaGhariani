@@ -3,7 +3,6 @@ class FilmService {
 
 	constructor() { }
 
-
 	url = "https://swapi.dev/api/films/";
 
 	async getFilms() {
@@ -35,7 +34,6 @@ class FilmService {
 
 	getFilmIdFromUrl(url) {
 		return url.match(/\d+/).join("");
-		//return url.split("https://swapi.dev/api/films/")[1].split("/")[0];
 	}
 
 	getFilmUrlFromId(id) {
