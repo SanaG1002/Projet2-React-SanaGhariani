@@ -6,7 +6,7 @@ function FilmList({ films }) {
   return (
     <Row>
       {films.map((film) => (
-        <FilmCard key={film.id} film={film} />
+        <FilmCard film={film} />
       ))}
     </Row>
   );

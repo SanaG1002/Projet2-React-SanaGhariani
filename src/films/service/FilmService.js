@@ -21,6 +21,7 @@ class FilmService {
 
 	async getFilmWithReturnedUrl(url) {
 		try {
+			console.log(url);
 			const response = await fetch(url);
 			if (!response.ok) throw new Error(response.statusText);
 			
@@ -30,6 +31,15 @@ class FilmService {
 
 			return {};
 		}
+	}
+
+	getFilmIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+		//return url.split("https://swapi.dev/api/films/")[1].split("/")[0];
+	}
+
+	getFilmUrlFromId(id) {
+		return "https://swapi.dev/api/films/" + id + "/";
 	}
 }
 
