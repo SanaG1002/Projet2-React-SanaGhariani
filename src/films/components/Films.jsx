@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import FilmService from "../service/FilmService";
 import FilmList from "./FilmList";
+import Container from "react-bootstrap/Container";
 
 const filmService = new FilmService();
 
@@ -25,7 +26,14 @@ const Films = () => {
     getFilms();
   }, []);
 
-  return <FilmList films={data} />;
+  return (
+    <Container>
+      <h2>Films</h2>
+
+      <FilmList films={data} />
+      
+    </Container>
+  );
 };
 
 export default Films;

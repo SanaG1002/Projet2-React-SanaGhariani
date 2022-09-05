@@ -1,10 +1,17 @@
-
 class VehiclesService {
 
 	constructor() { }
 
 	url = "https://swapi.dev/api/vehicles/";
 
+	getVehicleIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getVehicleUrlFromId(id) {
+		return this.url + id + "/";
+	}
+	
 	async getVehicles() {
 		try {
 			const response = await fetch(this.url);
@@ -29,14 +36,6 @@ class VehiclesService {
 
 			return {};
 		}
-	}
-
-	getVehicleIdFromUrl(url) {
-		return url.match(/\d+/).join("");
-	}
-
-	getVehicleUrlFromId(id) {
-		return this.url + id + "/";
 	}
 
 	async getVehicleById(id) {

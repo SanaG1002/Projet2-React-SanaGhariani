@@ -6,7 +6,7 @@ function VehicleList({ vehicles }) {
   return (
     <Row>
       {vehicles.map((vehicle) => (
-        <VehicleCard key={vehicle.id} vehicle={vehicle} />
+        <VehicleCard key={vehicle.url} vehicle={vehicle} />
       ))}
     </Row>
   );

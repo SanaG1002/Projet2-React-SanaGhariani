@@ -2,6 +2,7 @@ import React from "react";
 import VehicleService from "../service/VehicleService";
 import VehicleList from "./VehicleList";
 import useGetData from "../../useGetData";
+import Container from "react-bootstrap/Container";
 
 const vehicleService = new VehicleService();
 
@@ -11,7 +12,14 @@ const Vehicles = ({data}) => {
     data?.vehicles
   );
 
-  return <VehicleList vehicles={vehicles} />
+  return (
+    <Container>
+      <h2>Vehicules</h2>
+
+      <VehicleList vehicles={vehicles} />
+      
+    </Container>
+  );
 };
 
 export default Vehicles;

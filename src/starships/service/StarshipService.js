@@ -1,10 +1,17 @@
-
 class StarshipService {
 
     constructor() { }
 
 	url = "https://swapi.dev/api/starships/";
 
+	getStarshipIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getStarshipUrlFromId(id) {
+		return this.url + id + "/";
+	}
+	
 	async getStarships() {
 		try {
 			const response = await fetch(this.url);
@@ -29,14 +36,6 @@ class StarshipService {
 
 			return {};
 		}
-	}
-
-	getStarshipIdFromUrl(url) {
-		return url.match(/\d+/).join("");
-	}
-
-	getStarshipUrlFromId(id) {
-		return this.url + id + "/";
 	}
 
 	async getStarshipById(id) {

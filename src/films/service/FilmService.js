@@ -1,10 +1,17 @@
-
 class FilmService {
 
 	constructor() { }
 
 	url = "https://swapi.dev/api/films/";
 
+	getFilmIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getFilmUrlFromId(id) {
+		return this.url + id + "/";
+	}
+	
 	async getFilms() {
 		try {
 			const response = await fetch(this.url);
@@ -32,12 +39,9 @@ class FilmService {
 		}
 	}
 
-	getFilmIdFromUrl(url) {
-		return url.match(/\d+/).join("");
-	}
-
-	getFilmUrlFromId(id) {
-		return "https://swapi.dev/api/films/" + id + "/";
+	async getFilmById(id) {
+		const url = this.getFilmUrlFromId(id);
+		return await this.getFilmWithReturnedUrl(url);
 	}
 }
 

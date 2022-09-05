@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Vehicles from "../../vehicles/components/Vehicles";
 import Starships from "../../starships/components/Starships";
 import Peoples from "../../peoples/components/Peoples";
+import Container from "react-bootstrap/Container";
 
 const filmService = new FilmService();
 
@@ -16,8 +17,7 @@ const FilmPage = () => {
   const [data, setData] = useState([]);
 
   const getFilm = async () => {
-    const filmUrl = filmService.getFilmUrlFromId(id);
-    const film = await filmService.getFilmWithReturnedUrl(filmUrl);
+    const film = await filmService.getFilmById(id);
 
     setData(film);
   };
@@ -27,21 +27,26 @@ const FilmPage = () => {
   }, []);
 
   return (
-    <Card>
-      <BCard.Header >{id}</BCard.Header>
-      <BCard.Header >{data.title}</BCard.Header>
-      <BCard.Body>{data.opening_crawl}</BCard.Body>
-      <BCard.Body>{data.director}</BCard.Body>
-      <BCard.Body>{data.producer}</BCard.Body>
-      <BCard.Body>{data.release_date}</BCard.Body>
-      <BCard.Body>{data.release_date}</BCard.Body>
-  
+    <Container>
+      <h2>Film</h2>
+      
+      <Card>
+        <BCard.Header >{id}</BCard.Header>
+        <BCard.Header >{data.title}</BCard.Header>
+        <BCard.Body>{data.opening_crawl}</BCard.Body>
+        <BCard.Body>{data.director}</BCard.Body>
+        <BCard.Body>{data.producer}</BCard.Body>
+        <BCard.Body>{data.release_date}</BCard.Body>
+        <BCard.Body>{data.release_date}</BCard.Body>
+      </Card>
+
       <Vehicles data={data} />
 
       <Starships data={data} />
 
       <Peoples data={data} />
-    </Card>
+
+    </Container>
   );
 }
 

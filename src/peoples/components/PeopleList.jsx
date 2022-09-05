@@ -6,11 +6,10 @@ function PeopleList({ peoples }) {
   return (
     <Row>
       {peoples.map((people) => (
-        <PeopleCard key={people.id} people={people} />
+        <PeopleCard key={people.url} people={people} />
       ))}
     </Row>
   );
 }
 
 export default PeopleList;
-

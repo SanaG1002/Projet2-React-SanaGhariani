@@ -1,11 +1,17 @@
-
-
 class PeopleService {
 
     constructor() { }
 
 	url = "https://swapi.dev/api/people/";
 
+	getPeopleIdFromUrl(url) {
+		return url.match(/\d+/).join("");
+	}
+
+	getPeopleUrlFromId(id) {
+		return this.url + id + "/";
+	}
+	
 	async getPeoples() {
 		try {
 			const response = await fetch(this.url);
@@ -30,14 +36,6 @@ class PeopleService {
 
 			return {};
 		}
-	}
-
-	getPeopleIdFromUrl(url) {
-		return url.match(/\d+/).join("");
-	}
-
-	getPeopleUrlFromId(id) {
-		return this.url + id + "/";
 	}
 
 	async getPeopleById(id) {

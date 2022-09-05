@@ -6,11 +6,10 @@ function StarshipList({ starships }) {
   return (
     <Row>
       {starships.map((starship) => (
-        <StarshipCard key={starship.id} starship={starship} />
+        <StarshipCard key={starship.url} starship={starship} />
       ))}
     </Row>
   );
 }
 
 export default StarshipList;
-

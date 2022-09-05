@@ -2,6 +2,7 @@ import React from "react";
 import PeopleService from "../service/PeopleService";
 import PeopleList from "./PeopleList";
 import useGetData from "../../useGetData";
+import Container from "react-bootstrap/Container";
 
 const peopleService = new PeopleService();
 
@@ -11,7 +12,14 @@ const Peoples = ({data}) => {
     data?.characters
   );
 
-  return <PeopleList peoples={peoples} />;
+  return (
+    <Container>
+      <h2>Personnages</h2>
+
+      <PeopleList peoples={peoples} />
+      
+    </Container>
+  );
 };
 
 export default Peoples;

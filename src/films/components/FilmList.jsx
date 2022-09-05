@@ -13,5 +13,3 @@ function FilmList({ films }) {
 }
 
 export default FilmList;
-
-
