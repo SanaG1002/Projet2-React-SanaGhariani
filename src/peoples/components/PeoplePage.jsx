@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Table  from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
+import Films from "../../films/components/Films";
+import Vehicles from "../../vehicles/components/Vehicles";
+import Starships from "../../starships/components/Starships";
 
 const peopleService = new PeopleService();
 
@@ -46,6 +49,13 @@ const PeoplePage = () => {
           </tr>
         </tbody>
       </Table>
+
+      <Films data={data} />
+
+      <Vehicles data={data} />
+
+      <Starships data={data} />
+
     </Container>
   );
 }

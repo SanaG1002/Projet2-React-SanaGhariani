@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Table  from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
+import Films from "../../films/components/Films";
 
 const starshipService = new StarshipService();
 
@@ -46,6 +47,9 @@ const StarshipPage = () => {
           </tr>
         </tbody>
       </Table>
+
+      <Films data={data} />
+
     </Container>
   );
 }

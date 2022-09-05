@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import Films from '../films/components/Films';
+import FilmsPage from '../films/components/FilmsPage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FilmPage from "../films/components/FilmPage";
 import VehiclePage from "../vehicles/components/VehiclePage";
@@ -11,7 +11,7 @@ function App () {
     <BrowserRouter>
       <Container>
         <Routes>
-          <Route path='/films/' element={<Films />} />
+          <Route path='/films/' element={<FilmsPage />} />
           <Route path='/films/:id' element={<FilmPage />} />
           <Route path='/vehicles/:id' element={<VehiclePage />} />
           <Route path='/starships/:id' element={<StarshipPage />} />
