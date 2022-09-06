@@ -3,11 +3,12 @@ class VehiclesService {
 	constructor() { }
 
 	url = "https://swapi.dev/api/vehicles/";
-
+	
+	//Décomposition de l'URL
 	getVehicleIdFromUrl(url) {
 		return url.match(/\d+/).join("");
 	}
-
+	//Recomposition de l'URL
 	getVehicleUrlFromId(id) {
 		return this.url + id + "/";
 	}

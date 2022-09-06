@@ -4,10 +4,12 @@ class StarshipService {
 
 	url = "https://swapi.dev/api/starships/";
 
+	//Décomposition de l'URL
 	getStarshipIdFromUrl(url) {
 		return url.match(/\d+/).join("");
 	}
 
+	//Recomposition de l'URL
 	getStarshipUrlFromId(id) {
 		return this.url + id + "/";
 	}

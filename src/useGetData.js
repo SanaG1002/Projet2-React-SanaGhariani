@@ -23,17 +23,5 @@ const useGetData = (method, dataToGet = []) => {
         getAllData();
     }, [dataToGet.length]);
     return data;
-    //*/
-
-    return [
-        {
-          "name": "Sand Crawler", 
-          "model": "Digger Crawler"
-        },
-        {
-          "name": "T-16 skyhopper", 
-          "model": "T-16 skyhopper"
-        }
-      ];
 };
 export default useGetData;

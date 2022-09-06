@@ -11,7 +11,7 @@ function App () {
     <BrowserRouter>
       <Container>
         <Routes>
-          <Route path='/films/' element={<FilmsPage />} />
+          <Route path='/' element={<FilmsPage />} />
           <Route path='/films/:id' element={<FilmPage />} />
           <Route path='/vehicles/:id' element={<VehiclePage />} />
           <Route path='/starships/:id' element={<StarshipPage />} />

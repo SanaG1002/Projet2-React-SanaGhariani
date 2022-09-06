@@ -4,10 +4,12 @@ class PeopleService {
 
 	url = "https://swapi.dev/api/people/";
 
+	//Décomposition de l'URL
 	getPeopleIdFromUrl(url) {
 		return url.match(/\d+/).join("");
 	}
 
+	//Recomposition de l'URL
 	getPeopleUrlFromId(id) {
 		return this.url + id + "/";
 	}

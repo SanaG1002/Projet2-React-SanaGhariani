@@ -4,14 +4,17 @@ class FilmService {
 
 	url = "https://swapi.dev/api/films/";
 
+	
+	//Décomposition de l'URL
 	getFilmIdFromUrl(url) {
 		return url.match(/\d+/).join("");
 	}
-
+	
+	//Recomposition de l'URL
 	getFilmUrlFromId(id) {
 		return this.url + id + "/";
 	}
-	
+
 	async getFilms() {
 		try {
 			const response = await fetch(this.url);
@@ -43,6 +46,7 @@ class FilmService {
 		const url = this.getFilmUrlFromId(id);
 		return await this.getFilmWithReturnedUrl(url);
 	}
+	
 }
 
 export default FilmService;
