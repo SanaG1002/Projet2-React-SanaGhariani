@@ -24,6 +24,7 @@ const AppContainer = ({ children }) => {
   useEffect(() => {
     auth.onAuthChange(onAuth);
   }, [auth]);
+  
   return <>{children}</>;
 };
 

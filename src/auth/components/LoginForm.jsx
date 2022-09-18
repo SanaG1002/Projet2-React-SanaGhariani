@@ -42,8 +42,7 @@ const LoginForm = () => {
                 passwordRegex,
                 "Password must contain 8 characters, at least one letter and number"
               ),
-          })}
-        >
+          })}>
           <Form as={BsForm} noValidate>
             <Row>
               <Col>
@@ -70,9 +69,13 @@ const LoginForm = () => {
             </Row>
           </Form>
         </Formik>
-        <Button onClick={signinWithGoogle} type="button" variant="danger">
-          Connexion avec Google
-        </Button>
+        <Row className="ml-5">
+          <Col>
+            <Button onClick={signinWithGoogle} type="button" variant="secondary">
+              Connexion avec Google
+            </Button>
+          </Col>
+        </Row>
       </Container>
     </Container>
   );
