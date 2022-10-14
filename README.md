@@ -1,3 +1,11 @@
+# Projet React 2 - Création d'une application avec l'API SWAPI (Star Wars API)
+
+Dans le cadre de ma formation de développeur Front End, je devais construire une application avec la librairie React et React Router. 
+
+Le but étant de créer une interface pour aller chercher de l’information sur chaque film et personnages, véhicules et
+vaisseaux spatiaux dans ce film. Chaque page fera référence à certaines données de l’API SWAPI que
+nous pourrons ensuite visualiser. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
